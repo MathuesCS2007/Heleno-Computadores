@@ -1,0 +1,114 @@
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+@keyframes blink {
+    50% { opacity: 0; }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes moveUp {
+    from { transform: translateY(50vh) scale(2); opacity: 1; }
+    to { transform: translateY(-150px) scale(1); opacity: 1; }
+}
+
+@keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: radial-gradient(circle, #1a1a2e, #0f3460);
+    color: white;
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    overflow: hidden;
+}
+
+/* Tela de introdução */
+#intro {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: radial-gradient(circle, #1a1a2e, #0f3460);
+    z-index: 9999;
+}
+
+.title-container {
+    font-size: 2.5em;
+    font-weight: bold;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.cursor {
+    color: #0ff;
+    font-size: 1.2em;
+    animation: blink 0.8s infinite;
+}
+
+/* Esconde a introdução suavemente */
+.fade-out {
+    animation: fadeOut 1s ease forwards;
+}
+
+/* Conteúdo principal */
+#main-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+/* Animação do título principal */
+#main-title {
+    font-size: 3em;
+    opacity: 0;
+    transform: translateY(50vh) scale(2);
+}
+
+/* Animação do subtítulo */
+#sub-text {
+    font-size: 1.2em;
+    opacity: 0;
+}
+
+/* Botões de navegação */
+#options {
+    margin-top: 20px;
+    opacity: 0;
+}
+
+.nav-btn {
+    background: #0ff;
+    color: #1a1a2e;
+    font-size: 1.2em;
+    padding: 10px 20px;
+    margin: 10px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.nav-btn:hover {
+    background: #00bcd4;
+    transform: scale(1.1);
+}
